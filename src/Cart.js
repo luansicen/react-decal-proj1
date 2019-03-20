@@ -1,12 +1,16 @@
 import React from "react";
+import Product from "./Product";
 import "./styles/cart.css";
+import ProductData from "./Data";
 
 class Cart extends React.Component {
 
   render() {
     return (
         <div className="page-content">
-            <h2>Add your products here!</h2>
+        <div class="ui cards">
+            {ProductData.products.map(p => (<Product productName={p.name} price={p.cost.toString()} limit={p.stock}/>))}
+        </div>
         </div>
     );
   }
